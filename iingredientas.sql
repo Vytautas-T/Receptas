@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jul 18, 2022 at 10:38 AM
+-- Generation Time: Jul 18, 2022 at 07:09 PM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -31,44 +31,32 @@ DROP TABLE IF EXISTS `iingredientas`;
 CREATE TABLE IF NOT EXISTS `iingredientas` (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `pavadinimas` varchar(30) NOT NULL,
-  `Kalorijos` int(11) DEFAULT NULL,
   `kaina` decimal(7,2) UNSIGNED NOT NULL,
-  `alergijos` int(10) UNSIGNED DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `alergijos` (`alergijos`)
+  `kalorijos_per100g` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `iingredientas`
 --
 
-INSERT INTO `iingredientas` (`id`, `pavadinimas`, `Kalorijos`, `kaina`, `alergijos`) VALUES
-(1, 'Vištiena', 166, '6.12', NULL),
-(2, 'Jautienos faršas', 39, '8.55', NULL),
-(3, 'Braškės', 309, '3.53', NULL),
-(4, 'Pienas', 243, '4.53', 7),
-(5, 'Avižiniai dribsniai', 45, '3.59', NULL),
-(6, 'Svogūnas', 72, '2.53', NULL),
-(7, 'Bulvės', 313, '9.44', NULL),
-(8, 'Grietinė', 307, '5.93', NULL),
-(9, 'Teriyaki marinatas', 134, '3.85', NULL),
-(10, 'Lęšiai', 290, '10.21', NULL),
-(11, 'Avinžirniai', 423, '6.99', NULL),
-(12, 'Petražolė', 318, '1.57', NULL),
-(13, 'Pomidoras', 311, '8.87', NULL),
-(14, 'Agurkas', 436, '3.59', NULL),
-(15, 'Couscous', 84, '2.57', NULL),
-(16, 'Duona', 44, '0.69', NULL);
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `iingredientas`
---
-ALTER TABLE `iingredientas`
-  ADD CONSTRAINT `alergijos` FOREIGN KEY (`alergijos`) REFERENCES `alergijos` (`id`);
+INSERT INTO `iingredientas` (`id`, `pavadinimas`, `kaina`, `kalorijos_per100g`) VALUES
+(1, 'Vištiena', '6.12', 166),
+(2, 'Jautienos faršas', '8.55', 39),
+(3, 'Braškės', '3.53', 309),
+(4, 'Pienas', '4.53', 243),
+(5, 'Avižiniai dribsniai', '3.59', 45),
+(6, 'Svogūnas', '2.53', 72),
+(7, 'Bulvės', '9.44', 313),
+(8, 'Grietinė', '5.93', 307),
+(9, 'Teriyaki marinatas', '3.85', 124),
+(10, 'Lęšiai', '10.21', 290),
+(11, 'Avinžirniai', '6.99', 423),
+(12, 'Petražolė', '1.57', 319),
+(13, 'Pomidoras', '8.87', 311),
+(14, 'Agurkas', '3.59', 436),
+(15, 'Couscous', '2.57', 84),
+(16, 'Duona', '0.69', 44);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jul 17, 2022 at 02:54 PM
+-- Generation Time: Jul 18, 2022 at 07:09 PM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -33,15 +33,16 @@ CREATE TABLE IF NOT EXISTS `dieta` (
   `dienu_skaicius` int(10) UNSIGNED NOT NULL,
   `patiekalu_per_diena_skaicius` int(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `dieta`
 --
 
 INSERT INTO `dieta` (`id`, `dienu_skaicius`, `patiekalu_per_diena_skaicius`) VALUES
-(1, 60, 2),
-(2, 30, 3);
+(1, 2, 2),
+(2, 4, 3),
+(3, 3, 3);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

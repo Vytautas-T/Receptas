@@ -24,36 +24,41 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kategorija_virtuve_junginys`
+-- Table structure for table `receptai_alergijos`
 --
 
-DROP TABLE IF EXISTS `kategorija_virtuve_junginys`;
-CREATE TABLE IF NOT EXISTS `kategorija_virtuve_junginys` (
-  `kategorijos_id` int(10) UNSIGNED NOT NULL,
-  `virtuves_id` int(10) UNSIGNED NOT NULL,
-  KEY `kategorijos_id` (`kategorijos_id`),
-  KEY `virtuves_id` (`virtuves_id`)
+DROP TABLE IF EXISTS `receptai_alergijos`;
+CREATE TABLE IF NOT EXISTS `receptai_alergijos` (
+  `recepto_id` int(10) UNSIGNED NOT NULL,
+  `alergijos_id` int(10) UNSIGNED NOT NULL,
+  KEY `recepto_id` (`recepto_id`),
+  KEY `alergijos_id` (`alergijos_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `kategorija_virtuve_junginys`
+-- Dumping data for table `receptai_alergijos`
 --
 
-INSERT INTO `kategorija_virtuve_junginys` (`kategorijos_id`, `virtuves_id`) VALUES
-(2, 2),
-(2, 6),
-(6, 3);
+INSERT INTO `receptai_alergijos` (`recepto_id`, `alergijos_id`) VALUES
+(1, 1),
+(5, 7),
+(6, 7),
+(7, 11),
+(7, 6),
+(8, 7),
+(9, 1),
+(10, 1);
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `kategorija_virtuve_junginys`
+-- Constraints for table `receptai_alergijos`
 --
-ALTER TABLE `kategorija_virtuve_junginys`
-  ADD CONSTRAINT `kategorija_virtuve_junginys_ibfk_1` FOREIGN KEY (`kategorijos_id`) REFERENCES `kategorija` (`id`),
-  ADD CONSTRAINT `kategorija_virtuve_junginys_ibfk_2` FOREIGN KEY (`virtuves_id`) REFERENCES `virtuve` (`id`);
+ALTER TABLE `receptai_alergijos`
+  ADD CONSTRAINT `receptai_alergijos_ibfk_1` FOREIGN KEY (`recepto_id`) REFERENCES `receptas` (`id`),
+  ADD CONSTRAINT `receptai_alergijos_ibfk_2` FOREIGN KEY (`alergijos_id`) REFERENCES `alergijos` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
