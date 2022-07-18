@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jul 17, 2022 at 02:54 PM
+-- Generation Time: Jul 18, 2022 at 10:38 AM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -35,7 +35,6 @@ CREATE TABLE IF NOT EXISTS `iingredientas` (
   `kaina` decimal(7,2) UNSIGNED NOT NULL,
   `alergijos` int(10) UNSIGNED DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `Kalorijos` (`Kalorijos`),
   KEY `alergijos` (`alergijos`)
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
